@@ -32,7 +32,7 @@ lint:
 	jshint . --show-non-errors
 
 
-test: lint
+test:
 	@if test ! `which mocha` ; then \
 		echo "You need 'mocha' installed in order to run tests." >&2 ; \
 		echo "  $ make dev-deps" >&2 ; \
@@ -75,7 +75,7 @@ gh-pages:
 		git commit -q -m 'Recreated docs'
 	cd ${TMP_PATH} && \
 		git remote add remote ${REMOTE_REPO} && \
-		git push --force remote +master:gh-pages 
+		git push --force remote +master:gh-pages
 	rm -rf ${TMP_PATH}
 
 
